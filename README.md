@@ -1,3 +1,9 @@
 ## yarn dev
 
-Executar primeiro para depois iniciar o front-end com yarn start
+Comando para iniciar a aplicação
+
+
+## Novas funcionalidades necessárias do back-end:
+
+* Opção para atualizar Cadastro de Devs
+* Opção para cadastro de empresas
