@@ -43,6 +43,8 @@ module.exports = {
                  techs: techsArray,
                  location,
             });
+        } else {
+            return response.json({ message: 'Já cadastrado' })
         }
     
         return response.json(dev);
