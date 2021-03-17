@@ -48,5 +48,18 @@ module.exports = {
         }
     
         return response.json(dev);
-    }
+    },
+
+    async put(request, response){
+      const { id } = request.params;
+      const { techs } = request.body;
+
+      const techsArray = parseStringAsArray(techs);
+
+      await Dev.updateOne({_id: id}, {techs: techsArray});
+
+      const returnUpdate = Dev.find({_id: id})
+
+      return response.json( {message: 'Alterado com sucesso'});
+  },
 };

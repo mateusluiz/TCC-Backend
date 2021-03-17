@@ -12,4 +12,6 @@ routes.get('/search', SearchController.get);
 
 routes.delete('/delete/:id', DevController.delete);
 
+routes.put('/devs/:id', DevController.put)
+
 module.exports = routes;
