@@ -51,15 +51,22 @@ module.exports = {
     },
 
     async put(request, response){
-      const { id } = request.params;
-      const { techs } = request.body;
+      const { github_username } = request.params;
+      const { techs, latitude, longitude } = request.body;
 
       const techsArray = parseStringAsArray(techs);
 
-      await Dev.updateOne({_id: id}, {techs: techsArray});
+      const location = {
+        type: 'Point',
+        coordinates: [longitude, latitude],
+      }
 
-      const returnUpdate = Dev.find({_id: id})
+      await Dev.updateOne({github_username: github_username}, {
+        techs: techsArray,
+        location: location,
+      });
 
       return response.json( {message: 'Alterado com sucesso'});
-  },
+    },
+
 };
