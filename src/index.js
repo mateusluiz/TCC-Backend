@@ -16,7 +16,9 @@ app.use(cors());
 app.use(express.json()); // Fala para o express entender json
 app.use(routes); // Fala para usar as rotas dentro de routes
 
+const port = 3333
+
 // Porta da aplicação
-app.listen(3333, () => {
-    console.log("🚀  Iniciado! 🚀")
+app.listen(port, () => {
+    console.log(`🚀  Iniciado na porta: ${port}! 🚀`)
 });  
