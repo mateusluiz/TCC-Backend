@@ -24,7 +24,7 @@ module.exports = {
         
         if(!dev){            // await: aguarda o consumo de API para devolver uma resposta e continuar
             const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
-            
+
             // Se name não existir pega o valor do login
             let { name = login, avatar_url, bio } = apiResponse.data;
             
@@ -44,10 +44,10 @@ module.exports = {
                  location,
             });
         } else {
-            return response.json({ message: 'Já cadastrado' })
+            return response.status(301).json({ message: 'Já cadastrado' })
         }
     
-        return response.json(dev);
+        return response.status(200).json(dev) 
     },
 
     async put(request, response){
@@ -66,7 +66,7 @@ module.exports = {
         location: location,
       });
 
-      return response.json( {message: 'Alterado com sucesso'});
+      return response.status(200).json( {message: 'Alterado com sucesso'});
     },
 
 };
