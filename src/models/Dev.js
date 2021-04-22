@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const PointSchema = require('./utils/PointSchema');
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 const crypto = require('crypto')
 
 // Estrutura dos dados para salvar dentro do MongoDB
@@ -18,16 +18,16 @@ const DevSchema = new mongoose.Schema({
 });
 
 // Criptografia
-DevSchema.pre('save', async function (next) {
-  try {
-    const salt = await bcrypt.genSalt(10) 
-    const hashedPassword = await bcrypt.hash(this.github_username, salt)
-    this.github_username_crypt = hashedPassword
-    next()
-  } catch (error) {
-    next(error)
-  }
-})
+// DevSchema.pre('save', async function (next) {
+//   try {
+//     const salt = await bcrypt.genSalt(10) 
+//     const hashedPassword = await bcrypt.hash(this.github_username, salt)
+//     this.github_username_crypt = hashedPassword
+//     next()
+//   } catch (error) {
+//     next(error)
+//   }
+// })
 
 DevSchema.pre('save', async function (next) {
   try {
