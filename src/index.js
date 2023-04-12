@@ -5,7 +5,7 @@ const routes = require('./routes'); // Importa routes.js
 
 const app = express(); // Trás funções do express para a criação de rotas
 
-mongoose.connect('mongodb+srv://aplicacaoTCC:TCC2021cc@cluster-khmbu.mongodb.net/projetoTCC?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://aplicacaotcc:tcc2022cc@cluster0.fjhiske.mongodb.net/projetoTCC?retryWrites=true&w=majority', {
     useNewUrlParser: true, // retira avisos de conexão
     useUnifiedTopology: true, // retira avisos de conexão
 });
