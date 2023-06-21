@@ -22,10 +22,7 @@ module.exports = {
 
         let dev = await Dev.findOne({ github_username });
         
-        if(dev == null){
-            return response.status(404).json({ message: 'Esse usuário não existe' })
-        }
-        else if(!dev){            // await: aguarda o consumo de API para devolver uma resposta e continuar
+        if(!dev){            // await: aguarda o consumo de API para devolver uma resposta e continuar
             const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
 
             // Se name não existir pega o valor do login
